@@ -1,0 +1,649 @@
+{
+  "pbtResults": {
+    "6.3 Escrever teste de propriedade para campos obrigatórios ausentes": {
+      "status": "passed",
+      "lastRunTimestamp": 1795046891723
+    },
+    "6.9 Escrever teste de propriedade para a nota final ponderada": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047306986
+    },
+    "6.10 Escrever teste de propriedade para a estrutura do Feedback": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047317869
+    },
+    "6.13 Escrever teste de propriedade para as notas do relatório": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047402658
+    },
+    "6.14 Escrever teste de propriedade para o conteúdo do relatório": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047411940
+    },
+    "6.15 Escrever teste de propriedade para a ordenação do plano de estudo": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047412426
+    },
+    "6.11 Escrever teste de propriedade para resposta em branco": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047416908
+    },
+    "6.23 Escrever teste de propriedade para o resultado de cenário de teste": {
+      "status": "passed",
+      "lastRunTimestamp": 1795047520242
+    }
+  },
+  "executionHistory": {
+    "1.1 Criar a estrutura de pastas e a LICENSE": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046639960
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046650497
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046679592
+      }
+    ],
+    "2.1 Escrever `prompts/avaliador-de-respostas.md` (v1)": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046640302
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046682914
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046788887
+      }
+    ],
+    "3.1 Escrever `prompts/gerador-de-perguntas.md` (v1)": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046640462
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046683717
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046789540
+      }
+    ],
+    "4.1 Escrever `prompts/simulador-de-entrevista.md` (v1)": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046640777
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046794497
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046946168
+      }
+    ],
+    "5. Checkpoint - Revisar os três prompts": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046640922
+      }
+    ],
+    "6.1 Preparar o projeto Python e implementar `tools/perfil.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046641160
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046684216
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046790213
+      }
+    ],
+    "6.2 Escrever teste de propriedade para a validação do perfil": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046641349
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046794851
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046942031
+      }
+    ],
+    "6.3 Escrever teste de propriedade para campos obrigatórios ausentes": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046641530
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046795430
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046942885
+      }
+    ],
+    "6.4 Implementar `tools/banco.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046641738
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046795980
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046943564
+      }
+    ],
+    "6.5 Escrever teste de propriedade para a estrutura do banco": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046641900
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047245474
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047332370
+      }
+    ],
+    "6.6 Escrever teste de propriedade para a expansão do banco": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642004
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047245713
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047333898
+      }
+    ],
+    "6.7 Implementar `tools/feedback.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642114
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046796714
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046944333
+      }
+    ],
+    "6.8 Escrever teste de propriedade para os pesos da Rubrica": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642226
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047246072
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047334204
+      }
+    ],
+    "6.9 Escrever teste de propriedade para a nota final ponderada": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642385
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047246953
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047335818
+      }
+    ],
+    "6.10 Escrever teste de propriedade para a estrutura do Feedback": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642583
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047247666
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047337034
+      }
+    ],
+    "6.11 Escrever teste de propriedade para resposta em branco": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642731
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047341244
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047428581
+      }
+    ],
+    "6.12 Implementar `tools/relatorio.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642849
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046955711
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047239968
+      }
+    ],
+    "6.13 Escrever teste de propriedade para as notas do relatório": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046642998
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047341997
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047427855
+      }
+    ],
+    "6.14 Escrever teste de propriedade para o conteúdo do relatório": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643115
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047342892
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047427033
+      }
+    ],
+    "6.15 Escrever teste de propriedade para a ordenação do plano de estudo": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643233
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047343799
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047426216
+      }
+    ],
+    "6.16 Implementar `tools/transcricao.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643497
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046955360
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047240278
+      }
+    ],
+    "6.17 Escrever teste de propriedade para o formato das mensagens do entrevistador": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643618
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047345220
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047425397
+      }
+    ],
+    "6.18 Implementar `tools/prompts_md.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643734
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046957121
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047240662
+      }
+    ],
+    "6.19 Escrever teste de propriedade para a conformidade do arquivo de prompt": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643848
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047432435
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047569507
+      }
+    ],
+    "6.20 Escrever teste de propriedade para o histórico de versões": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046643963
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047433307
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047569095
+      }
+    ],
+    "6.21 Implementar `tools/docs_md.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644084
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046957328
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047241268
+      }
+    ],
+    "6.22 Escrever teste de propriedade para os links relativos do README": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644319
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047434599
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047567374
+      }
+    ],
+    "6.23 Escrever teste de propriedade para o resultado de cenário de teste": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644429
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047435054
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047568215
+      }
+    ],
+    "6.24 Implementar a CLI `tools/validar_artefatos.py`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644542
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047572746
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047696729
+      }
+    ],
+    "6.25 Escrever teste de propriedade para divergências entre assistentes": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644703
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047435632
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047566729
+      }
+    ],
+    "7. Checkpoint - Validador e testes": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644846
+      }
+    ],
+    "8.1 Criar `docs/registro-de-prompts.md` com índice e fichas": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046644967
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047573455
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047697523
+      }
+    ],
+    "8.2 Criar a v2 do Avaliador e registrar a comparação de versões": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046645198
+      }
+    ],
+    "8.3 Registrar lições aprendidas, cenários de teste e checklist de qualidade": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046645308
+      }
+    ],
+    "9.1 Escrever o `README.md`": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046645433
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047704667
+      },
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047777056
+      }
+    ],
+    "10.1 Executar o validador sobre os artefatos reais e corrigir as reprovações": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046645548
+      }
+    ],
+    "11. Checkpoint final": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046645655
+      }
+    ],
+    "1. Estrutura do repositório e licença": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046679880
+      }
+    ],
+    "2. Prompt do Avaliador_de_Respostas": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046789118
+      }
+    ],
+    "3. Prompt do Gerador_de_Perguntas": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046789678
+      }
+    ],
+    "4. Prompt do Simulador_de_Entrevista": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795046946593
+      }
+    ],
+    "6. Validador de artefatos (opcional, em `tools/`)": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047697043
+      }
+    ],
+    "9. README": [
+      {
+        "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795047777207
+      }
+    ]
+  }
+}
