@@ -1,0 +1,35 @@
+[aprovada]  prompts/avaliador-de-respostas.md: conformidade (Req. 6.x)
+[aprovada]  prompts/avaliador-de-respostas.md: histórico de versões (Req. 7.1, 7.2)
+[aprovada]  prompts/gerador-de-perguntas.md: conformidade (Req. 6.x)
+[aprovada]  prompts/gerador-de-perguntas.md: histórico de versões (Req. 7.1, 7.2)
+[aprovada]  prompts/simulador-de-entrevista.md: conformidade (Req. 6.x)
+[aprovada]  prompts/simulador-de-entrevista.md: histórico de versões (Req. 7.1, 7.2)
+[aprovada]  README.md: seções na ordem (Req. 8.1)
+[aprovada]  README.md: tags (Req. 8.5)
+[aprovada]  README.md: links (Req. 8.4, 8.8)
+[aprovada]  README.md: licença (Req. 8.9)
+[aprovada]  docs/registro-de-prompts.md: Seções obrigatórias
+[aprovada]  docs/registro-de-prompts.md: Índice de prompts
+[aprovada]  docs/registro-de-prompts.md: Fichas dos prompts
+[reprovada] docs/registro-de-prompts.md: Comparação de versões do Avaliador
+    campo ausente/inválido: comparacao.versoes - Há 0 versões comparadas; o mínimo é 2 (Req. 7.3).
+    campo ausente/inválido: comparacao.versao_adotada - Versão adotada ausente ou fora do formato vN.
+    campo ausente/inválido: comparacao.motivo - Motivo da versão adotada ausente.
+[reprovada] docs/registro-de-prompts.md: Lições aprendidas
+    campo ausente/inválido: licoes - Há 0 lições aprendidas; o mínimo é 3 (Req. 7.4).
+[reprovada] docs/registro-de-prompts.md: Cenários de teste
+    campo ausente/inválido: cenarios - Há 0 cenários; o esperado é de 3 a 20 (Req. 10.1).
+    campo ausente/inválido: cenarios.senioridades - Os cenários cobrem menos de 2 Senioridades (Req. 10.1).
+    campo ausente/inválido: cenarios.resposta-vazia - Falta cenário de resposta vazia (Req. 10.3).
+    campo ausente/inválido: cenarios.fora-de-contexto - Falta cenário de resposta fora de contexto (Req. 10.3).
+[reprovada] docs/registro-de-prompts.md: Checklist de qualidade
+    campo ausente/inválido: checklist - Item do checklist sem condição objetiva: Relevância das perguntas (Req. 10.5).
+    campo ausente/inválido: checklist - Item do checklist sem condição objetiva: Aderência à Senioridade (Req. 10.5).
+    campo ausente/inválido: checklist - Item do checklist sem condição objetiva: Formato de saída (Req. 10.5).
+    campo ausente/inválido: checklist - Item do checklist sem condição objetiva: Coerência das notas (Req. 10.5).
+    campo ausente/inválido: checklist - Item do checklist sem condição objetiva: Clareza do Feedback (Req. 10.5).
+[reprovada] docs/registro-de-prompts.md: Portabilidade entre assistentes
+    campo ausente/inválido: portabilidade - Nenhum cenário com a mesma entrada em 2 ou mais assistentes (Req. 10.7).
+[aprovada]  LICENSE: presença (Req. 8.9)
+
+Total: 19 verificações, 14 aprovadas, 5 reprovadas.

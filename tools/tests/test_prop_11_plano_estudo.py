@@ -94,3 +94,51 @@ def test_empate_de_nota_desempata_por_nome_da_categoria():
     ]
     plano = ordenar_plano_de_estudo(topicos, notas)
     assert [t["categoria"] for t in plano] == ["Beta", "Alfa", "Zeta"]
+
+
+def _relatorio_parcial(respostas, plano):
+    notas = calcular_notas_por_categoria(respostas)
+    return {
+        "parcial": True,
+        "nota_geral": calcular_nota_geral(respostas),
+        "nota_por_categoria": dict(notas),
+        "resumo": "Resumo.",
+        "pontos_fortes": [],
+        "pontos_de_melhoria": [],
+        "plano_de_estudo": plano,
+    }
+
+
+# Feature: ia-entrevistador, Property 11: Ordenação do plano de estudo
+# Validates: Requirements 5.3
+@settings(max_examples=100, deadline=None)
+@given(st.lists(st.builds(RespostaAvaliada, categoria=_categorias, nota=_notas), min_size=1, max_size=2))
+def test_relatorio_parcial_plano_ordenado_e_valido(respostas):
+    notas = calcular_notas_por_categoria(respostas)
+    topicos = [{"topico": f"Estudar {c}", "categoria": c} for c in sorted(notas, reverse=True)]
+    plano = ordenar_plano_de_estudo(topicos, notas)
+
+    chaves = [(notas[t["categoria"]], t["categoria"]) for t in plano]
+    assert chaves == sorted(chaves)
+
+    resultado = validar_relatorio(_relatorio_parcial(respostas, plano), respostas)
+    assert resultado.erros == ()
+
+
+def test_parcial_com_duas_categorias_fora_de_ordem_e_rejeitado():
+    respostas = [RespostaAvaliada("Python", Decimal(9)), RespostaAvaliada("API", Decimal(2))]
+    notas = calcular_notas_por_categoria(respostas)
+    topicos = [{"topico": "p", "categoria": "Python"}, {"topico": "a", "categoria": "API"}]
+    # Ordem correta: API (2) antes de Python (9).
+    ok = validar_relatorio(_relatorio_parcial(respostas, ordenar_plano_de_estudo(topicos, notas)), respostas)
+    assert ok.erros == ()
+    ruim = validar_relatorio(_relatorio_parcial(respostas, topicos), respostas)
+    assert any(e.campo == "plano_de_estudo" for e in ruim.erros)
+
+
+def test_parcial_com_uma_resposta_aceita_plano_de_um_topico():
+    respostas = [RespostaAvaliada("API", Decimal(4))]
+    plano = [{"topico": "Estudar API", "categoria": "API"}]
+    assert validar_relatorio(_relatorio_parcial(respostas, plano), respostas).erros == ()
+    vazio = validar_relatorio(_relatorio_parcial(respostas, []), respostas)
+    assert any(e.campo == "plano_de_estudo" for e in vazio.erros)

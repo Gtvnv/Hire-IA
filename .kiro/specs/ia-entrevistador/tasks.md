@@ -46,7 +46,7 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     - Manter o prompt em texto puro/Markdown, sem recursos exclusivos de um produto (portabilidade entre Assistentes_de_IA)
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6.2, 6.3, 6.4, 6.5, 6.7, 6.8, 7.1, 9.4, 9.5_
 
-- [~] 5. Checkpoint - Revisar os três prompts
+- [ ] 5. Checkpoint - Revisar os três prompts
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 6. Validador de artefatos (opcional, em `tools/`)
@@ -180,22 +180,22 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     - Arquivo `tools/tests/test_prop_17_divergencias.py`, com 2 ou mais execuções, nomes de assistente e modelo variados (incluindo vazios) e casos em que todos os resultados coincidem
     - **Validates: Requirements 10.2, 10.7, 10.8**
 
-- [~] 7. Checkpoint - Validador e testes
+- [ ] 7. Checkpoint - Validador e testes
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 8. Registro de Prompts
+- [x] 8. Registro de Prompts
   - [x] 8.1 Criar `docs/registro-de-prompts.md` com índice e fichas
     - Índice com links relativos para cada arquivo em `prompts/`
     - Reservar a seção de portabilidade entre Assistentes_de_IA (preenchida na tarefa 8.3)
     - Ficha por prompt: objetivo (1 a 300 caracteres), texto completo, técnica (exatamente uma), exemplo de entrada, exemplo de saída e versão atual `vN`
     - _Requirements: 7.1, 7.5_
 
-  - [~] 8.2 Criar a v2 do Avaliador e registrar a comparação de versões
+  - [x] 8.2 Criar a v2 do Avaliador e registrar a comparação de versões
     - Adicionar a v2 em `prompts/avaliador-de-respostas.md`, preservando o texto da v1 e registrando data, motivo e resultado
     - Documentar no Registro o resultado das duas versões com o mesmo conjunto de pelo menos 3 entradas de teste e a comparação textual indicando a versão adotada e o motivo
     - _Requirements: 4.8, 7.2, 7.3_
 
-  - [~] 8.3 Registrar lições aprendidas, cenários de teste e checklist de qualidade
+  - [x] 8.3 Registrar lições aprendidas, cenários de teste e checklist de qualidade
     - Ao menos 3 lições aprendidas com problema, correção e versão
     - De 3 a 20 cenários com Perfil_da_Vaga distintos e ao menos 2 Senioridades, incluindo resposta vazia e resposta fora de contexto, mais cenários de fluxo (encerrar, modo treino e realista, fora de escopo, variável ausente, dado sensível)
     - Para cada execução de cada cenário: identificador, entrada, saída obtida, nome do Assistente_de_IA e modelo utilizados, data, resultado por critério e comportamento esperado e observado nos casos de resposta inválida
@@ -214,12 +214,34 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.9, 9.1_
 
 - [ ] 10. Validação final dos artefatos
-  - [~] 10.1 Executar o validador sobre os artefatos reais e corrigir as reprovações
+  - [ ] 10.1 Executar o validador sobre os artefatos reais e corrigir as reprovações
     - Rodar `python tools/validar_artefatos.py` e ajustar prompts, README e Registro até que todas as verificações sejam aprovadas
     - _Requirements: 6.1, 6.2, 6.4, 7.6, 8.4, 8.8, 10.1, 10.3_
 
-- [~] 11. Checkpoint final
+- [ ] 11. Checkpoint final
   - Ensure all tests pass, ask the user if questions arise.
+
+- [x] 12. Melhorias pós-entrega
+
+  - [x] 12.1 Adicionar CI e higiene do repositório
+    - Criar .github/workflows/ci.yml (push e pull_request): Python 3.12, `pip install -r tools/requirements.txt`, `pytest tools/tests -q` e, em passo separado com `continue-on-error: true`, `python tools/validar_artefatos.py` (seções 8.2/8.3 do Registro dependem de execuções reais)
+    - Criar `.gitattributes` (LF) e `pytest.ini` (`testpaths = tools/tests`); remover os `.gitkeep` sem uso
+    - Ajustar o README (nota sobre CI e como rodar os testes) sem quebrar as verificações do README
+
+  - [x] 12.2 Ampliar a cobertura dos testes de propriedade
+    - Em `test_prop_01_perfil.py`, gerar `cargo`/`senioridade` só com espaços e verificar que são reportados como ausentes
+    - Em `test_prop_11_plano_estudo.py`, cobrir relatórios parciais (n = 1 e n = 2)
+  - [x] 12.3 Melhorar a apresentação visual do README
+    - Badges (licença MIT, Python, CI), índice, emojis discretos nos títulos, tabelas e blocos de destaque, mantendo as seções na ordem do Req. 8.1, as tags exatas e os links relativos
+    - Não afirmar resultados de execuções reais inexistentes; manter o validador do README aprovado
+
+  - [x] 12.4 Executar os prompts via Docker e coletar evidências
+    - Criar `docker-compose.yml` com um serviço Ollama (volume de modelos existente montado só leitura) e um serviço Python que roda testes, validador e `tools/executar_cenarios.py`
+    - `tools/executar_cenarios.py` envia os prompts reais com as entradas A1-A3 (v1 e v2) e os cenários da 8.3 para modelos locais (llama3.2:3b e llama3.2:1b) e grava saídas brutas, modelo, data e duração em `docs/evidencias/`
+    - As evidências são execuções reais; nada é editado à mão
+
+  - [x] 12.5 Atualizar o README com as evidências
+    - Seção de resultados com o resumo das execuções reais e link para `docs/evidencias/`, mantendo o validador do README aprovado
 
 ## Notes
 
@@ -242,7 +264,7 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     { "id": 3, "tasks": ["6.5", "6.6", "6.8", "6.9", "6.10", "6.11", "6.13", "6.14", "6.15", "6.17", "6.19", "6.20", "6.22", "6.23", "6.24", "6.25", "8.1"] },
     { "id": 4, "tasks": ["8.2", "9.1"] },
     { "id": 5, "tasks": ["8.3"] },
-    { "id": 6, "tasks": ["10.1"] }
+    { "id": 6, "tasks": ["10.1", "12.1", "12.2", "12.3", "12.4", "12.5"] }
   ]
 }
 ```
