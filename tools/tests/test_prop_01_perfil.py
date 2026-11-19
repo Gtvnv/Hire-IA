@@ -125,3 +125,27 @@ def test_limites_exatos(n_cargo, senioridade, n_tec, n_desc):
         1 <= n_cargo <= 100 and n_tec <= 20 and (n_desc is None or 1 <= n_desc <= 5000)
     )
     assert resultado.valido == esperado_valido
+
+
+# Feature: ia-entrevistador, Property 1: Validação do Perfil_da_Vaga
+# Validates: Requirements 1.1, 1.2, 1.6
+_so_espacos = st.text(alphabet=" \t\n\r", min_size=1, max_size=20)
+
+
+@settings(max_examples=100, deadline=None)
+@given(_so_espacos, _so_espacos)
+def test_cargo_e_senioridade_so_com_espacos_sao_ausentes(cargo, senioridade):
+    resultado = validar_perfil({"cargo": cargo, "senioridade": senioridade})
+    assert not resultado.valido
+    assert set(resultado.campos_ausentes) == {"cargo", "senioridade"}
+
+
+@settings(max_examples=100, deadline=None)
+@given(_so_espacos, st.booleans())
+def test_um_campo_so_com_espacos_reporta_apenas_ele(brancos, no_cargo):
+    perfil = {"cargo": "Dev", "senioridade": "Pleno"}
+    campo = "cargo" if no_cargo else "senioridade"
+    perfil[campo] = brancos
+    resultado = validar_perfil(perfil)
+    assert resultado.campos_ausentes == (campo,)
+    assert resultado.campos_invalidos == (campo,)

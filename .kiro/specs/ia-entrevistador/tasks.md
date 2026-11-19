@@ -221,6 +221,16 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
 - [~] 11. Checkpoint final
   - Ensure all tests pass, ask the user if questions arise.
 
+- [x] 12. Melhorias pós-entrega
+
+  - [x] 12.1 Adicionar CI e higiene do repositório
+    - Criar .github/workflows/ci.yml (push e pull_request): Python 3.12, `pip install -r tools/requirements.txt`, `pytest tools/tests -q` e, em passo separado com `continue-on-error: true`, `python tools/validar_artefatos.py` (seções 8.2/8.3 do Registro dependem de execuções reais)
+    - Criar `.gitattributes` (LF) e `pytest.ini` (`testpaths = tools/tests`); remover os `.gitkeep` sem uso
+    - Ajustar o README (nota sobre CI e como rodar os testes) sem quebrar as verificações do README
+
+  - [x] 12.2 Ampliar a cobertura dos testes de propriedade
+    - Em `test_prop_01_perfil.py`, gerar `cargo`/`senioridade` só com espaços e verificar que são reportados como ausentes
+    - Em `test_prop_11_plano_estudo.py`, cobrir relatórios parciais (n = 1 e n = 2)
 ## Notes
 
 - Tarefas marcadas com `*` são opcionais e podem ser puladas para um MVP mais rápido.
@@ -242,7 +252,7 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     { "id": 3, "tasks": ["6.5", "6.6", "6.8", "6.9", "6.10", "6.11", "6.13", "6.14", "6.15", "6.17", "6.19", "6.20", "6.22", "6.23", "6.24", "6.25", "8.1"] },
     { "id": 4, "tasks": ["8.2", "9.1"] },
     { "id": 5, "tasks": ["8.3"] },
-    { "id": 6, "tasks": ["10.1"] }
+    { "id": 6, "tasks": ["10.1", "12.1", "12.2"] }
   ]
 }
 ```

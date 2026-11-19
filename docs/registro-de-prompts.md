@@ -12,7 +12,7 @@ Cada prompt fica em um arquivo próprio na pasta `prompts/`, com todas as suas v
 |---|---|---|---|
 | Gerador de Perguntas | Gerador_de_Perguntas | v1 | [prompts/gerador-de-perguntas.md](../prompts/gerador-de-perguntas.md) |
 | Simulador de Entrevista | Simulador_de_Entrevista | v1 | [prompts/simulador-de-entrevista.md](../prompts/simulador-de-entrevista.md) |
-| Avaliador de Respostas | Avaliador_de_Respostas | v1 | [prompts/avaliador-de-respostas.md](../prompts/avaliador-de-respostas.md) |
+| Avaliador de Respostas | Avaliador_de_Respostas | v2 | [prompts/avaliador-de-respostas.md](../prompts/avaliador-de-respostas.md) |
 
 ## Fichas dos prompts
 
@@ -78,8 +78,8 @@ Cada prompt fica em um arquivo próprio na pasta `prompts/`, com todas as suas v
 
 - **Objetivo:** avaliar a resposta de um candidato a uma pergunta de entrevista segundo uma Rubrica fixa e devolver um Feedback estruturado, com notas por critério, nota final ponderada, pontos fortes, pontos de melhoria e resposta sugerida.
 - **Técnica:** Few-shot
-- **Versão atual:** v1
-- **Texto completo:** [prompts/avaliador-de-respostas.md](../prompts/avaliador-de-respostas.md), seção "Prompt v1" (texto integral, sem truncamento).
+- **Versão atual:** v2
+- **Texto completo:** [prompts/avaliador-de-respostas.md](../prompts/avaliador-de-respostas.md), seção "Prompt v2" (texto integral, sem truncamento).
 - **Exemplo de entrada:**
 
   ```text
@@ -106,7 +106,38 @@ Cada prompt fica em um arquivo próprio na pasta `prompts/`, com todas as suas v
 
 ## Comparação de versões do Avaliador
 
-> **Reservado para a tarefa 8.2.** Esta seção ainda não foi preenchida. Ela receberá a v1 e a v2 do Avaliador de Respostas, o resultado de cada versão para o mesmo conjunto de pelo menos 3 entradas de teste, a versão adotada e o motivo. Nenhum resultado foi registrado, porque a v2 ainda não existe e as execuções ainda não foram feitas.
+> **Estado: parcial (tarefa 8.2).** As descrições das versões e as entradas de teste estão definidas. As execuções reais ainda não foram feitas, então nenhum resultado, nota ou versão adotada está registrado. Todas as células de resultado abaixo estão marcadas como "pendente (execução real)".
+
+### Versões comparadas
+
+- **v1:** texto em [prompts/avaliador-de-respostas.md](../prompts/avaliador-de-respostas.md), seção "Prompt v1". Rubrica de cinco critérios com pesos 30/20/20/15/15, escala genérica única de 0 a 10 (cinco faixas), nota final ponderada com a conta mostrada, verificação STAR para perguntas Comportamentais, tratamento de resposta inválida (vazia, só espaços ou fora do assunto) e de falha de avaliação, e um exemplo few-shot.
+- **v2:** texto na seção "Prompt v2" do mesmo arquivo. Mantém a Rubrica, os pesos e o few-shot da v1 e acrescenta: (1) tabela de âncoras numéricas por critério, com uma descrição por faixa de nota; (2) autoverificação da soma ponderada, com segunda conta em ordem inversa e campo "Autoverificação" no Feedback; (3) regras para resposta parcial e tangencial, com tetos de nota, separadas da resposta inválida (sem relação com a pergunta); (4) justificativa que cita a faixa de âncora usada; (5) restrições contra notas idênticas por padrão e contra copiar os valores do exemplo.
+
+### Entradas de teste (mesmas para as duas versões)
+
+Contexto comum a todas as entradas: Cargo Desenvolvedor Back-end, Senioridade Pleno, Tecnologias C# e SQL Server, idioma não informado (português do Brasil).
+
+| ID | Tipo | Categoria | Pergunta | Resposta do candidato |
+|---|---|---|---|---|
+| A1 | Resposta forte | Técnica | Qual a diferença entre INNER JOIN e LEFT JOIN? | "INNER JOIN devolve só as linhas com correspondência nas duas tabelas. LEFT JOIN devolve todas as linhas da tabela da esquerda e preenche com NULL as colunas da direita quando não há correspondência. Na prática, uso LEFT JOIN para listar clientes mesmo sem pedidos, e filtro por `pedido.Id IS NULL` para achar quem nunca comprou. Um cuidado é que um filtro na tabela da direita dentro do WHERE transforma o LEFT JOIN em INNER JOIN; nesse caso o filtro vai na cláusula ON. Em tabelas grandes, índices nas colunas de junção evitam varreduras completas." |
+| A2 | Resposta fraca | Técnica | Qual a diferença entre INNER JOIN e LEFT JOIN? | "O INNER JOIN junta tabelas e o LEFT JOIN também junta, só que de um jeito diferente. Os dois são usados em consultas." |
+| A3 | Resposta fora do assunto | Técnica | Qual a diferença entre INNER JOIN e LEFT JOIN? | "Eu gosto de trabalhar em equipe e acho que a comunicação é a base de qualquer projeto. Também estou estudando inglês para crescer na carreira." |
+
+Para uma quarta entrada opcional (parcial), usar a mesma pergunta com uma resposta que explica só o INNER JOIN. Ela não é obrigatória para a tarefa 8.2 e, se for usada, deve ser registrada como A4 com o texto exato executado.
+
+### Resultados por versão
+
+Preencher com a saída real de cada execução (nota final, notas por critério, se a conta confere, se o formato foi seguido). Informar também o Assistente_de_IA, o modelo e a data de cada execução.
+
+| ID | Resultado v1 | Resultado v2 |
+|---|---|---|
+| A1 (forte) | pendente (execução real) | pendente (execução real) |
+| A2 (fraca) | pendente (execução real) | pendente (execução real) |
+| A3 (fora do assunto) | pendente (execução real) | pendente (execução real) |
+
+### Versão adotada
+
+Pendente (execução real). Depende dos resultados da tabela acima. O motivo da escolha será registrado aqui, com base nas execuções feitas pelo usuário.
 
 ## Lições aprendidas
 

@@ -27,6 +27,7 @@ Ajudar quem se prepara para um processo seletivo a treinar com perguntas próxim
 - Acesso a um assistente de IA generativa baseado em conversa (por exemplo, ChatGPT, Claude, Gemini ou Copilot, citados apenas como exemplo).
 - Um editor de texto ou o navegador para abrir os arquivos de prompt e copiar o conteúdo.
 - Opcional, para o validador: Python 3 e as dependências de `tools/requirements.txt` (pytest e hypothesis).
+- Para rodar os testes: `pip install -r tools/requirements.txt` e depois `pytest tools/tests`. O CI (GitHub Actions, `.github/workflows/ci.yml`) executa os testes a cada push e pull request com Python 3.12. O passo do validador roda sem bloquear o CI, porque as seções 8.2 e 8.3 do Registro aguardam execuções reais.
 
 ## Estrutura do repositório
 

@@ -563,6 +563,16 @@
         "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
         "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
         "timestamp": 1795046645198
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048130058
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048498262
       }
     ],
     "8.3 Registrar lições aprendidas, cenários de teste e checklist de qualidade": [
@@ -643,6 +653,47 @@
         "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
         "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
         "timestamp": 1795047777207
+      }
+    ],
+    "12.1 Adicionar CI e higiene do repositório": [
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048402279
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048407858
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048496802
+      }
+    ],
+    "12.2 Ampliar a cobertura dos testes de propriedade": [
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048402941
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048408150
+      },
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048497475
+      }
+    ],
+    "12. Melhorias pós-entrega": [
+      {
+        "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795048497587
       }
     ]
   }
