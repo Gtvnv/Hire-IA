@@ -1,0 +1,58 @@
+# Evidências de execução (tarefa 12.4): roda testes, validador e cenários de prompts
+# contra modelos locais do Ollama.
+#
+# Uso (a partir da raiz do repositório):
+#   docker compose -p hireia up --abort-on-container-exit runner
+#   docker compose -p hireia down        # sem -v
+#
+# O volume de modelos pertence a outro projeto (chatbot) e é montado SOMENTE LEITURA.
+# Este arquivo não baixa, apaga nem escreve modelos nele.
+name: hireia
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    environment:
+      # Impede a limpeza automática de camadas no start (o volume é somente leitura).
+      OLLAMA_NOPRUNE: "1"
+    volumes:
+      # O volume externo guarda o diretório ~/.ollama inteiro do outro projeto; os modelos
+      # ficam no subdiretório "models". Por isso o mount usa subpath, somente leitura.
+      - type: volume
+        source: chatbot_ollama-modelos
+        target: /root/.ollama/models
+        read_only: true
+        volume:
+          subpath: models
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 10s
+
+  runner:
+    image: python:3.12-slim
+    working_dir: /work
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      PYTHONUTF8: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    volumes:
+      - ./:/work
+    command:
+      - sh
+      - -c
+      - |
+        mkdir -p docs/evidencias
+        pip install --no-cache-dir -q -r tools/requirements.txt
+        python -m pytest tools/tests -q -p no:cacheprovider 2>&1 | tee docs/evidencias/execucao-testes.txt
+        python tools/validar_artefatos.py 2>&1 | tee docs/evidencias/execucao-validador.txt
+        python tools/executar_cenarios.py --url "$$OLLAMA_URL"
+
+volumes:
+  chatbot_ollama-modelos:
+    external: true

@@ -9,7 +9,7 @@ _texto = st.lists(_palavra, min_size=1, max_size=8).map(" ".join)
 _campo = st.text(
     alphabet="abcdefghijklmnopqrstuvwxyz áéíóúç", min_size=1, max_size=500
 ).filter(lambda s: s.strip() == s and s != "")
-_data = st.dates().map(lambda d: d.strftime("%Y-%m-%d"))
+_data = st.dates().map(lambda d: d.isoformat())  # isoformat sempre zero-preenche o ano (strftime não, em glibc)
 _versao = st.fixed_dictionaries(
     {"texto": _texto, "data": _data, "motivo": _campo, "resultado": _campo}
 )

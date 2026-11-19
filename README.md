@@ -9,7 +9,7 @@
 [![CI](https://github.com/Gtvnv/Hire-IA/actions/workflows/ci.yml/badge.svg)](https://github.com/Gtvnv/Hire-IA/actions/workflows/ci.yml)
 [![prompts: 3](https://img.shields.io/badge/prompts-3-informational.svg)](prompts/)
 
-[Objetivo](#objetivo-) · [Tags](#tags-) · [Funcionalidades](#funcionalidades-) · [Como usar](#como-usar-) · [Exemplo](#exemplo-de-sessão-) · [Técnicas](#técnicas-de-engenharia-de-prompt-) · [Resultados](#resultados-e-aprendizados-) · [Limitações](#limitações-) · [Licença](#licença-)
+[Objetivo](#objetivo-) · [Funcionalidades](#funcionalidades-) · [Estrutura](#estrutura-do-repositório-) · [Como usar](#como-usar-) · [Exemplo](#exemplo-de-sessão-) · [Técnicas](#técnicas-de-engenharia-de-prompt-) · [Resultados](#resultados-e-aprendizados-) · [Reproduzir](#reproduzir-as-evidências-) · [Limitações](#limitações-) · [Próximos passos](#próximos-passos-) · [Licença](#licença-)
 
 </div>
 
@@ -49,7 +49,7 @@ flowchart LR
 - Acesso a um assistente de IA generativa baseado em conversa (por exemplo, ChatGPT, Claude, Gemini ou Copilot, citados apenas como exemplo).
 - Um editor de texto ou o navegador para abrir os arquivos de prompt e copiar o conteúdo.
 - Opcional, para o validador: Python 3 e as dependências de `tools/requirements.txt` (pytest e hypothesis).
-- Para rodar os testes: `pip install -r tools/requirements.txt` e depois `pytest tools/tests`. O CI (GitHub Actions, `.github/workflows/ci.yml`) executa os testes a cada push e pull request com Python 3.12. O passo do validador roda sem bloquear o CI, porque as seções 8.2 e 8.3 do Registro aguardam execuções reais.
+- Para rodar os testes: `pip install -r tools/requirements.txt` e depois `pytest tools/tests`. O CI (GitHub Actions, `.github/workflows/ci.yml`) executa os testes a cada push e pull request com Python 3.12. O passo do validador roda com `continue-on-error`, então não bloqueia o CI.
 
 ## Estrutura do repositório 🗂️
 
@@ -61,10 +61,15 @@ flowchart LR
 │   ├── gerador-de-perguntas.md
 │   ├── simulador-de-entrevista.md
 │   └── avaliador-de-respostas.md
+├── docker-compose.yml
 ├── docs/
-│   └── registro-de-prompts.md
+│   ├── registro-de-prompts.md
+│   └── evidencias/
+│       ├── RESUMO.md
+│       └── EV01.md ... EV12.md
 └── tools/
     ├── validar_artefatos.py
+    ├── executar_cenarios.py
     ├── requirements.txt
     └── tests/
 ```
@@ -75,7 +80,10 @@ flowchart LR
 | [prompts/simulador-de-entrevista.md](prompts/simulador-de-entrevista.md) | Simulador_de_Entrevista |
 | [prompts/avaliador-de-respostas.md](prompts/avaliador-de-respostas.md) | Avaliador_de_Respostas |
 | [docs/registro-de-prompts.md](docs/registro-de-prompts.md) | Registro de Prompts, com fichas, versões, cenários de teste e lições aprendidas |
-| `tools/` | Validador determinístico e testes de propriedade (opcional) |
+| [docs/evidencias/](docs/evidencias/RESUMO.md) | Evidências: saída bruta de 12 execuções reais (EV01 a EV12) e o resumo com as verificações automáticas |
+| [docker-compose.yml](docker-compose.yml) | Sobe o Ollama e um contêiner que roda testes, validador e cenários |
+| [tools/executar_cenarios.py](tools/executar_cenarios.py) | Executa os cenários contra o Ollama e grava `docs/evidencias/` |
+| `tools/` | Validador determinístico, verificadores de nota e banco, e testes de propriedade (opcional) |
 
 ## Como usar 🚀
 
@@ -155,11 +163,45 @@ Os três prompts usam variáveis nomeadas no formato `{{nome}}`, seções fixas 
 ## Resultados e aprendizados 📊
 
 > [!NOTE]
-> Os resultados dos testes em assistentes de IA reais ainda estão pendentes. Nenhuma execução real foi registrada até agora.
+> Os resultados abaixo vêm de 12 execuções reais (EV01 a EV12) no Ollama, com os modelos `llama3.2:latest` (3B) e `llama3.2:1b`, em CPU, com temperature 0 e seed 42, em 2026-11-19. Cada célula é uma única execução. As conclusões valem só para modelos pequenos e locais; os testes em assistentes maiores ainda estão pendentes.
 
-Os resultados serão registrados em [docs/registro-de-prompts.md](docs/registro-de-prompts.md). Por isso, este README não afirma notas, taxas de acerto nem comparações entre assistentes. Os exemplos incluídos nos prompts e neste README são ilustrativos.
+A saída bruta de cada execução está em [docs/evidencias/](docs/evidencias/RESUMO.md), e a análise completa (comparação de versões, lições, cenários, checklist e portabilidade) está no [Registro de Prompts](docs/registro-de-prompts.md). A comparação v1 e v2 do Avaliador adotou a v2 de forma provisória, e a escolha não prova que a v2 avalia melhor.
 
-Quando as execuções forem feitas, o Registro trará a comparação entre as versões do Avaliador (v1 e v2, com a v2 como versão atual), as lições aprendidas e os cenários de teste, com assistente, modelo e data de cada execução.
+### Evidências
+
+As verificações automáticas usam `tools/banco.validar_banco` (Gerador) e `tools/feedback.calcular_nota_final` (Avaliador). Os números vêm de [RESUMO.md](docs/evidencias/RESUMO.md).
+
+| Cenário | Modelo | Verificação automática | Resultado |
+|---|---|---|---|
+| Gerador v1, Backend Júnior e Analista de Dados Pleno (EV07, EV08) | llama3.2:latest | `validar_banco`: 0 perguntas lidas, nenhuma tabela Markdown | ❌ |
+| Gerador v1, mesma entrada de EV07 (EV11) | llama3.2:1b | `validar_banco`: 0 perguntas lidas, colunas inválidas (veio "campo, regra") | ❌ |
+| Avaliador v1, entradas A1 a A3 (EV01 a EV03) | llama3.2:latest | Nota final informada confere com `calcular_nota_final`: 0 de 3 | ❌ |
+| Avaliador v2, entradas A1 a A3 (EV04 a EV06) | llama3.2:latest | Nota final informada confere: 0 de 3 | ❌ |
+| Avaliador v2, resposta em branco (EV09) | llama3.2:latest | Resposta detectada como em branco, mas avaliada com nota 3,75 (calculada: 4,4) | ❌ |
+| Avaliador v2, resposta fora de contexto (EV10) | llama3.2:latest | Nota final 0 confere com o cálculo (todas as notas 0) | ✅ |
+| Avaliador v2, mesma entrada de EV05 (EV12) | llama3.2:1b | Nota informada 6,8; calculada 4,4 | ❌ |
+
+No Avaliador, a nota final informada bateu com `calcular_nota_final` em 1 de 9 execuções (EV10, nota 0). Em EV03, EV05 e EV06 a diferença vem só do formato (duas casas decimais, quando o prompt pede uma); nas demais a soma está errada.
+
+### O que aprendemos
+
+- **Gerador:** no `llama3.2:latest`, EV07 e EV08 não produziram a tabela de perguntas. No `llama3.2:1b`, EV11 produziu uma tabela com as colunas erradas.
+- **Soma ponderada:** a conta errada aparece em várias execuções, e a nota 6,8 do exemplo few-shot foi copiada em EV01, EV04 e EV12.
+- **Autoverificação da v2:** o campo apareceu sempre, mas em EV04 e EV09 confirmou uma soma errada.
+- **Resposta inválida:** a resposta em branco (EV09) e a fora de contexto (EV10) não receberam o tratamento "Resposta inválida" previsto no prompt.
+- **STAR:** a Verificação STAR apareceu em perguntas Técnicas, contra a regra do prompt.
+- **Limite:** são poucas amostras, em modelos pequenos, com um único assistente. As correções ainda não estão nos prompts.
+
+### Reproduzir as evidências
+
+O [docker-compose.yml](docker-compose.yml) sobe o Ollama e um contêiner Python que roda os testes, o validador e [tools/executar_cenarios.py](tools/executar_cenarios.py). O volume de modelos `chatbot_ollama-modelos` é externo e montado somente leitura, então precisa existir antes, com `llama3.2:latest` e `llama3.2:1b`. A partir da raiz do repositório:
+
+```bash
+docker compose -p hireia up --abort-on-container-exit runner
+docker compose -p hireia down
+```
+
+As execuções são lentas em CPU (de 5 a 20 minutos cada nesta amostra). Para refazer só algumas, rode o script com `--ids EV11,EV12`, e para regravar apenas o resumo, com `--resumo`.
 
 ## Limitações ⚠️
 
@@ -178,10 +220,11 @@ Os prompts instruem o assistente a ignorar esses dados e características pessoa
 
 ## Próximos passos 🧭
 
-- Executar os cenários de teste em ao menos dois assistentes de IA e registrar os resultados no Registro de Prompts.
-- Comparar a v2 do Avaliador de Respostas com a v1 usando as mesmas entradas de teste e registrar o resultado.
-- Registrar as lições aprendidas a partir dos problemas observados nas execuções.
-- Atualizar a seção "Resultados e aprendizados" com os resultados reais.
+- Executar os cenários em um segundo assistente de IA, de preferência maior que os modelos locais testados, e registrar a portabilidade no Registro de Prompts. É a única verificação do validador que ainda falha.
+- Executar cenários de fluxo com o Simulador de Entrevista, que ainda não foram executados.
+- Criar o Avaliador v3 aplicando as lições: conferência da soma, tratamento de "Resposta inválida" e Verificação STAR só em perguntas Comportamentais.
+- Revisar o Gerador para que gere a tabela mesmo com as variáveis preenchidas.
+- Repetir a comparação v1 e v2 com mais entradas e mais execuções por célula.
 
 ## Licença 📄
 

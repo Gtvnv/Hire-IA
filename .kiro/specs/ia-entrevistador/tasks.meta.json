@@ -573,6 +573,16 @@
         "executionId": "331c96f8-2ff0-48d3-8544-bacef2b67285",
         "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
         "timestamp": 1795048498262
+      },
+      {
+        "executionId": "58e74e78-798f-4d2b-ae41-14c59987b742",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795065051960
+      },
+      {
+        "executionId": "58e74e78-798f-4d2b-ae41-14c59987b742",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795065362294
       }
     ],
     "8.3 Registrar lições aprendidas, cenários de teste e checklist de qualidade": [
@@ -580,6 +590,26 @@
         "executionId": "cecc3c2a-0a1c-44e4-915b-e8201bee5562",
         "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
         "timestamp": 1795046645308
+      },
+      {
+        "executionId": "58e74e78-798f-4d2b-ae41-14c59987b742",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795065363903
+      },
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795094556370
+      },
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795094565057
+      },
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795095451791
       }
     ],
     "9.1 Escrever o `README.md`": [
@@ -706,6 +736,42 @@
         "executionId": "8cc8aacb-dc16-4bf1-a8ea-d5a11d3c8253",
         "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
         "timestamp": 1795048889321
+      }
+    ],
+    "12.4 Executar os prompts via Docker e coletar evidências": [
+      {
+        "executionId": "2bffe406-b459-4bbd-b476-d34bd4b96637",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795051582928
+      },
+      {
+        "executionId": "58e74e78-798f-4d2b-ae41-14c59987b742",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795062625286
+      },
+      {
+        "executionId": "58e74e78-798f-4d2b-ae41-14c59987b742",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795065051215
+      }
+    ],
+    "8. Registro de Prompts": [
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795095454389
+      }
+    ],
+    "12.5 Atualizar o README com as evidências": [
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795096096551
+      },
+      {
+        "executionId": "d92a9b40-9d7c-4303-a809-87d160a44313",
+        "chatSessionId": "sess_afb63b99-1bd7-48bb-9479-43c842a79086",
+        "timestamp": 1795096438935
       }
     ]
   }

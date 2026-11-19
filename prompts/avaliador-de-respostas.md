@@ -351,10 +351,10 @@ Saída do exemplo:
 
 - **Data:** 2026-11-18
 - **Motivo:** versão inicial do prompt, com Rubrica de cinco critérios, nota final ponderada com cálculo explícito, verificação STAR, tratamento de resposta inválida e de falha, e um exemplo completo (few-shot).
-- **Resultado observado:** ainda não testado em um Assistente_de_IA. Os resultados dos testes serão registrados em `docs/registro-de-prompts.md`.
+- **Resultado observado:** testado em 3 entradas (EV01 a EV03, Ollama llama3.2:latest, temperature 0, seed 42). A nota final informada não coincidiu com `calcular_nota_final` em nenhuma (soma errada em EV01 e EV02). STAR indevida em pergunta Técnica nas 3. A3 (fora do assunto) foi pontuada (2,9), sem "Resposta inválida". Detalhes em `docs/registro-de-prompts.md`.
 
 ### v2
 
 - **Data:** 2026-11-18
 - **Motivo:** melhorias propostas sobre a v1, ainda não confirmadas por execução: âncoras numéricas por critério em tabela; autoverificação da soma ponderada com segunda conta e campo próprio; regras para resposta parcial e tangencial, separadas da resposta inválida; justificativa que cita a faixa de âncora; proibição de notas iguais por padrão e de copiar o exemplo.
-- **Resultado:** ainda não executado. A comparação com a v1 depende de execuções reais, registradas em `docs/registro-de-prompts.md`, seção "Comparação de versões do Avaliador".
+- **Resultado:** testado em 3 entradas (EV04 a EV06, mesmo modelo e parâmetros). Autoverificação e faixa de âncora presentes nas 3, mas em EV04 ela confirmou uma soma errada. Soma correta em EV05 e EV06, que tiveram notas idênticas para entradas diferentes. A3 foi pontuada (4,2), sem nota 0. Adotada de forma provisória; ver `docs/registro-de-prompts.md`.
