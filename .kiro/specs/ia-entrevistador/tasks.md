@@ -190,7 +190,7 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     - Ficha por prompt: objetivo (1 a 300 caracteres), texto completo, técnica (exatamente uma), exemplo de entrada, exemplo de saída e versão atual `vN`
     - _Requirements: 7.1, 7.5_
 
-  - [~] 8.2 Criar a v2 do Avaliador e registrar a comparação de versões
+  - [x] 8.2 Criar a v2 do Avaliador e registrar a comparação de versões
     - Adicionar a v2 em `prompts/avaliador-de-respostas.md`, preservando o texto da v1 e registrando data, motivo e resultado
     - Documentar no Registro o resultado das duas versões com o mesmo conjunto de pelo menos 3 entradas de teste e a comparação textual indicando a versão adotada e o motivo
     - _Requirements: 4.8, 7.2, 7.3_
@@ -231,6 +231,10 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
   - [x] 12.2 Ampliar a cobertura dos testes de propriedade
     - Em `test_prop_01_perfil.py`, gerar `cargo`/`senioridade` só com espaços e verificar que são reportados como ausentes
     - Em `test_prop_11_plano_estudo.py`, cobrir relatórios parciais (n = 1 e n = 2)
+  - [x] 12.3 Melhorar a apresentação visual do README
+    - Badges (licença MIT, Python, CI), índice, emojis discretos nos títulos, tabelas e blocos de destaque, mantendo as seções na ordem do Req. 8.1, as tags exatas e os links relativos
+    - Não afirmar resultados de execuções reais inexistentes; manter o validador do README aprovado
+
 ## Notes
 
 - Tarefas marcadas com `*` são opcionais e podem ser puladas para um MVP mais rápido.
@@ -252,7 +256,7 @@ Linguagem do validador: Python (conforme o design). Prompts e documentação em 
     { "id": 3, "tasks": ["6.5", "6.6", "6.8", "6.9", "6.10", "6.11", "6.13", "6.14", "6.15", "6.17", "6.19", "6.20", "6.22", "6.23", "6.24", "6.25", "8.1"] },
     { "id": 4, "tasks": ["8.2", "9.1"] },
     { "id": 5, "tasks": ["8.3"] },
-    { "id": 6, "tasks": ["10.1", "12.1", "12.2"] }
+    { "id": 6, "tasks": ["10.1", "12.1", "12.2", "12.3"] }
   ]
 }
 ```
